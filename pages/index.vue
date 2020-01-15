@@ -1,68 +1,124 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        adonisblog
-      </h1>
-      <h2 class="subtitle">
-        My personal adonisjs content and backend tips
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
-  </div>
+  <main>
+    <my-nav></my-nav>
+    <b-container fluid>
+      <b-row class="justify-content-center">
+        <b-container>
+          <b-row class="justify-content-center">
+            <b-col cols="12" lg="8" md="7">
+              <slider />
+            </b-col>
+            <b-col cols="12" lg="4" md="5">
+              <newsletter />
+              <post />
+            </b-col>
+          </b-row>
+
+          <b-row class="justify-content-center">
+            <b-col cols="12" lg="4" md="4">
+              <post />
+            </b-col>
+            <b-col cols="12" lg="4" md="4">
+              <post />
+            </b-col>
+            <b-col cols="12" lg="4" md="4">
+              <post />
+            </b-col>
+          </b-row>
+        </b-container>
+
+        <section class="section col-12 bg-grey-light">
+          <b-container>
+            <b-row class="justify-content-center">
+              <heading>Trending Post</heading>
+
+              <b-col cols="12" lg="4" md="6">
+                <post />
+              </b-col>
+
+              <b-col cols="12" lg="4" md="6">
+                <post />
+              </b-col>
+
+              <b-col cols="12" lg="4" md="6">
+                <post />
+              </b-col>
+              <b-col cols="12" lg="4" md="6">
+                <post />
+              </b-col>
+
+              <b-col cols="12" lg="4" md="6">
+                <post />
+              </b-col>
+
+              <b-col cols="12" lg="4" md="6">
+                <post />
+              </b-col>
+
+              <heading class="mt-5">Latest Post</heading>
+
+              <b-col cols="12" lg="4" md="6">
+                <post />
+              </b-col>
+
+              <b-col cols="12" lg="4" md="6">
+                <post />
+              </b-col>
+
+              <b-col cols="12" lg="4" md="6">
+                <post />
+              </b-col>
+              <b-col cols="12" lg="4" md="6">
+                <post />
+              </b-col>
+
+              <b-col cols="12" lg="4" md="6">
+                <post />
+              </b-col>
+
+              <b-col cols="12" lg="4" md="6">
+                <post />
+              </b-col>
+
+              <heading class="mt-5">Resources</heading>
+              <b-col md="6" lg="4" cols="12" class="align-self-right">
+                <newsletter />
+              </b-col>
+
+              <b-col md="6" lg="4" cols="12" class="align-self-right">
+                <newsletter />
+              </b-col>
+
+              <b-col md="6" lg="4" cols="12" class="align-self-right">
+                <newsletter />
+              </b-col>
+            </b-row>
+          </b-container>
+        </section>
+      </b-row>
+    </b-container>
+
+    <my-footer></my-footer>
+  </main>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
+import MyNav from '~/components/Nav.vue'
+import Slider from '~/components/Slider.vue'
+import Newsletter from '~/components/Newsletter.vue'
+import Post from '~/components/Post.vue'
+import Heading from '~/components/Heading.vue'
+import MyFooter from '~/components/Footer.vue'
 export default {
   components: {
-    Logo
+    MyNav,
+    Slider,
+    Newsletter,
+    Post,
+    Heading,
+    MyFooter
   }
 }
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
+<style></style>
