@@ -1,6 +1,6 @@
 <template>
   <b-card no-body>
-    <a href="#" class="card__link">
+    <nuxt-link to="/asjkj" class="card__link">
       <div class="card__img-container">
         <img src="/images/blog-img-1.jpg" alt="" />
       </div>
@@ -12,7 +12,7 @@
           2019 in review
         </b-card-text>
       </b-card-body>
-    </a>
+    </nuxt-link>
   </b-card>
 </template>
 

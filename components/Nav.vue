@@ -1,6 +1,6 @@
 <template>
   <b-navbar class="nav__menu">
-    <b-navbar-brand href="#" class="nav__logo">
+    <b-navbar-brand href="/" class="nav__logo">
       <b-img src="/images/header-logo.svg"></b-img>
       <h4
         class="col-12 color-violent-violet text-bolder text-center mt-3 nav__logo--heading"
@@ -37,13 +37,19 @@
         </div>
         <ul class="mobile-navigation__main">
           <li class="mobile-navigation__item">
-            <a href="#" class="mobile-navigation__link">Blog</a>
+            <nuxt-link to="blogs" class="mobile-navigation__link"
+              >Blog</nuxt-link
+            >
           </li>
           <li class="mobile-navigation__item">
-            <a href="#" class="mobile-navigation__link">Tutorials</a>
+            <nuxt-link to="blogs" class="mobile-navigation__link"
+              >Tutorials</nuxt-link
+            >
           </li>
           <li class="mobile-navigation__item">
-            <a href="#" class="mobile-navigation__link">Backend</a>
+            <nuxt-link to="blogs" class="mobile-navigation__link"
+              >Backend</nuxt-link
+            >
           </li>
         </ul>
 
@@ -102,19 +108,19 @@
     </div>
     <ul class="nav__main">
       <li class="nav__main--list active">
-        <a href="#" class="nav__main--link">
+        <nuxt-link to="blogs" class="nav__main--link">
           Blog
-        </a>
+        </nuxt-link>
       </li>
       <li class="nav__main--list">
-        <a href="#" class="nav__main--link">
+        <nuxt-link to="blogs" class="nav__main--link">
           Tutorials
-        </a>
+        </nuxt-link>
       </li>
       <li class="nav__main--list">
-        <a href="#" class="nav__main--link">
+        <nuxt-link to="blogs" class="nav__main--link">
           Backend
-        </a>
+        </nuxt-link>
       </li>
     </ul>
   </b-navbar>
