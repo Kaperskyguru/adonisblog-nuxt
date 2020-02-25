@@ -8,34 +8,20 @@
             <b-row class="justify-content-center">
               <b-col cols="12" lg="8" md="7">
                 <b-row class="justify-content-center">
-                  <b-col cols="12" lg="6" md="6">
-                    <post />
-                  </b-col>
-                  <b-col cols="12" lg="6" md="6">
-                    <post />
-                  </b-col>
-
-                  <b-col cols="12" lg="6" md="6">
-                    <post />
-                  </b-col>
-                  <b-col cols="12" lg="6" md="6">
-                    <post />
-                  </b-col>
-
-                  <b-col cols="12" lg="6" md="6">
-                    <post />
-                  </b-col>
-                  <b-col cols="12" lg="6" md="6">
-                    <post />
+                  <b-col
+                    v-for="(post, i) in posts"
+                    :key="i"
+                    cols="12"
+                    lg="6"
+                    md="6"
+                  >
+                    <post :post="post" />
                   </b-col>
                 </b-row>
                 <b-col cols="12">
                   <b-pagination-nav
-                    base-url="#"
-                    number-of-pages="10"
-                    pills
-                    prev-text="Previous"
-                    next-text="Next"
+                    :link-gen="paginate"
+                    :number-of-pages="perPage"
                     class="m-4"
                     size="lg"
                     align="fill"
@@ -57,6 +43,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Post from '~/components/Post.vue'
 import MyFooter from '~/components/Footer.vue'
 import MyNav from '~/components/Nav.vue'
@@ -67,6 +54,31 @@ export default {
     MyFooter,
     MyNav,
     Newsletter
+  },
+
+  computed: {
+    ...mapState({
+      posts: (state) => {
+        return state.posts.posts
+      }
+    }),
+    perPage() {
+      return this.posts.total ? this.posts.total : 1
+    }
+  },
+  asyncData({ store, query }) {
+    const payload = []
+    // payload.perPage = 6
+    payload.page = query.page === undefined ? (query.page = 1) : query.page
+    store.dispatch('posts/getPosts', payload)
+  },
+  methods: {
+    paginate(page) {
+      const payload = []
+      // payload.perPage = 3
+      payload.page = page
+      return page === 1 ? '?' : `?page=${page}`
+    }
   }
 }
 </script>

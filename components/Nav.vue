@@ -38,6 +38,11 @@
         <ul class="mobile-navigation__main">
           <li class="mobile-navigation__item">
             <nuxt-link to="blogs" class="mobile-navigation__link"
+              >Adonisjs</nuxt-link
+            >
+          </li>
+          <li class="mobile-navigation__item">
+            <nuxt-link to="blogs" class="mobile-navigation__link"
               >Blog</nuxt-link
             >
           </li>
@@ -48,7 +53,7 @@
           </li>
           <li class="mobile-navigation__item">
             <nuxt-link to="blogs" class="mobile-navigation__link"
-              >Backend</nuxt-link
+              >Backend Tips</nuxt-link
             >
           </li>
         </ul>
@@ -109,7 +114,12 @@
     <ul class="nav__main">
       <li class="nav__main--list active">
         <nuxt-link to="blogs" class="nav__main--link">
-          Blog
+          Adonisjs
+        </nuxt-link>
+      </li>
+      <li class="nav__main--list active">
+        <nuxt-link to="blogs" class="nav__main--link">
+          Articles
         </nuxt-link>
       </li>
       <li class="nav__main--list">
@@ -119,7 +129,7 @@
       </li>
       <li class="nav__main--list">
         <nuxt-link to="blogs" class="nav__main--link">
-          Backend
+          Backend Tips
         </nuxt-link>
       </li>
     </ul>
